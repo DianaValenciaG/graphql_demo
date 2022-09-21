@@ -1,0 +1,30 @@
+{
+  "name": "graphql-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e js, graphql index",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/schema": "^9.0.4",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "graphql-iso-date": "^3.6.1",
+    "graphql-scalars": "^1.18.0",
+    "graphql-tools": "^8.3.6",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

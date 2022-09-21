@@ -1,0 +1,71 @@
+type User {
+  _id: ID!
+  nickname: String!
+  name: String
+  email: String
+  country: Country
+  password: String
+  profession: String
+  topics: [String]
+}
+
+type Country {
+  _id: ID!
+  name: String!
+  iso_code: String
+}
+
+type Profession {
+  _id: ID!
+  name: String!
+  description: String
+}
+
+type Topic {
+  _id: ID!
+  name: String!
+  description: String
+}
+
+type Query {
+  "Returns all users"
+  getUsers: [User]
+  "Returns a user"
+  getUser(nickname: String!): User
+ "Returns all professions"
+  getProfessions: [Profession]
+  "Returns a profession"
+  getProfession(id: ID!): Profession
+  "Returns all countries"
+  getCountries: [Country]
+  "Returns a country"
+  getCountry(iso_code: String!): Country
+  "Returns all topics"
+  getTopics: [Topic]
+  "Return a topic"
+  getTopic(id: ID!): Topic
+}
+
+input userInput {
+  nickname: String!
+  name: String
+  email: String!
+  password: String!
+  profesion: String
+  topics:[String]
+}
+
+input countryInput {
+  name: String!
+  iso_code: String!
+}
+
+
+type Mutation {
+  "Create User"
+  createUser(input: userInput!): User
+  "Create Country"
+  createCountry(input: countryInput!): Country
+  "Add Country to User"
+  addCountry(nickname:String, iso_code:String): User
+}
